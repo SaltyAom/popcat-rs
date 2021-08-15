@@ -1,4 +1,4 @@
-use std::thread::sleep;
+use std::{thread::sleep, time::Duration};
 
 use headless_chrome::{Browser, browser::LaunchOptionsBuilder, protocol::input::methods::DispatchKeyEvent};
 
@@ -35,6 +35,8 @@ fn main() {
                     code: enter,
                     text
                 })?;
+
+                sleep(Duration::from_millis(1000 / 25))
             }
         });
     };
